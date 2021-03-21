@@ -1,0 +1,19 @@
+{
+  "name": "webexam",
+  "version": "1.0.0",
+  "description": "exam on web development (3gr)",
+  "main": "-",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sad",
+    "depression",
+    "suicide",
+    "death",
+    "anxiety",
+    "pain"
+  ],
+  "author": "Kucherenko Ivan <stysha.72@mail.ru>",
+  "license": "ISC"
+}
