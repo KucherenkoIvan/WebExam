@@ -18,9 +18,16 @@ export default class CanvasGL extends React.Component {
         gl_Position = a_position;
       }
       `;
-    console.warn('ctor')
+    this.fragmentShader = `
+    precision mediump float;
+
+    void main() {
+      gl_FragColor = vec4(.4, .6, .9, 1.);
+    }
+    `
+    console.warn('ctor',  {fragmentShader: props.fragmentShader || this.fragmentShader})
     this.state = {
-      fragmentShader: props.fragmentShader,
+      fragmentShader: props.fragmentShader || this.fragmentShader,
       screenResolution: {
         w: this.props.w || window.innerWidth,
         h: this.props.h || window.innerHeight,
@@ -177,7 +184,7 @@ export default class CanvasGL extends React.Component {
   static getDerivedStateFromProps(props, state) {
     return {
       ...state,
-      fragmentShader: props.fragmentShader,
+      fragmentShader: props.fragmentShader || state.fragmentShader,
       screenResolution: {
         w: props.w || window.innerWidth,
         h: props.h || window.innerHeight,
@@ -198,7 +205,6 @@ export default class CanvasGL extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <canvas className="gl_canvas" ref={this.canvasRef} width={this.state.screenResolution.w} height={this.state.screenResolution.h}></canvas>
     )
