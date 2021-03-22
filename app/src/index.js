@@ -8,6 +8,7 @@ import thunkMiddleware from 'redux-thunk'
 import { createStore, compose, applyMiddleware } from 'redux';
 
 import Routing from './routing';
+import s from './index.scss';
 
 const store = createStore(
   rootReducer,
