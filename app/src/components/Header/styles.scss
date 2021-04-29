@@ -1,4 +1,32 @@
 .header {
-  height: 10%;
-  border-bottom: 2px solid gainsboro;
+  height: 90px;
+  width: 100%;
+  background-color: #222222;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+
+  @media screen and (max-width: 810px) {
+    height: fit-content;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .link, .link:visited {
+    padding: 30px;
+
+    white-space: nowrap;
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #2a2a2a;
+      border-radius: 5px;
+      color: white;
+    }
+  }
 }

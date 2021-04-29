@@ -1,0 +1,35 @@
+.representationCard {
+  overflow: auto;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  background-color: whitesmoke;
+  justify-content: space-between;
+
+  .horizontalText {
+    padding: 2rem;
+    background-color: #222222;
+    color: #efefef;
+    writing-mode: vertical-lr;
+    
+    font-size: 24px;
+
+    &__L {
+      text-align: end;
+      transform: rotate(180deg);
+      order: 0;
+    }
+
+    &__R {
+      text-align: start;
+      transform: none;
+      order: 2;
+    }
+  }
+ 
+  .mainText {
+    padding: 15px;
+    font-size: 18px;
+    order: 1;
+  }
+}

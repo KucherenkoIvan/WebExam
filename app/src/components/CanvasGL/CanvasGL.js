@@ -25,7 +25,6 @@ export default class CanvasGL extends React.Component {
       gl_FragColor = vec4(.4, .6, .9, 1.);
     }
     `
-    console.warn('ctor',  {fragmentShader: props.fragmentShader || this.fragmentShader})
     this.state = {
       fragmentShader: props.fragmentShader || this.fragmentShader,
       screenResolution: {
