@@ -5,7 +5,7 @@
   "main": "-",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node ./build/index.js",
+    "start": "node ./build/index.js",
     "server:ts": "nodemon ./src/index.ts",
     "start:ts": "concurrently \"npm run server:ts\" \"cd ./app && npm run start\"",
     "build": "tsc --project ./"
