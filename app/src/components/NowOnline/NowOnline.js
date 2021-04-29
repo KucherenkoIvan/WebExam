@@ -5,8 +5,8 @@ export default function NowOnline({ theme }) {
   const nowOnline = useSelector(state => state.nowOnline.count);
   
   return (
-    <div>
-      Сейчас онлайн: <span>{nowOnline}</span>
+    <div id="qooi-counter">
+      Сейчас онлайн: {nowOnline}
     </div>
   );
 }
