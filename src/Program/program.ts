@@ -17,8 +17,16 @@ class Program {
 
     app.use(router);
 
-    app.listen(config.Port, () => {
-      this.logger.success('Server', `App available at http://localhost:${config.Port}`)
+    app.use(express.static('./app/build'));
+
+    app.get('/', async (req: any, res: any) => {
+      const file = fs.readFileSync(path.resolve('/app/build/index.html'));
+
+      res.send(file);
+    })
+    
+    app.listen(process.env.PORT || config.Port, () => {
+      this.logger.success('Server', `App available at http://localhost:${process.env.PORT || config.Port}`)
     });
   }
 

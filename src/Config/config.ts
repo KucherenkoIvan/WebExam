@@ -4,7 +4,7 @@ import path from 'path';
 class Config {
   private cfg: any;
   constructor() {
-    const cfgText: string = fs.readFileSync(path.join(__dirname, 'appconfig.json'), { encoding: 'utf8' });
+    const cfgText: string = fs.readFileSync(path.resolve('appconfig.json'), { encoding: 'utf8' });
     this.cfg = JSON.parse(cfgText);
   }
 
