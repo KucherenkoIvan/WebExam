@@ -8,7 +8,7 @@
     "start": "node ./build/index.js",
     "server:ts": "nodemon ./src/index.ts",
     "start:ts": "concurrently \"npm run server:ts\" \"cd ./app && npm run start\"",
-    "build": "tsc --project ./"
+    "build": "tsc --project ./ && cd app && npm run build"
   },
   "keywords": [
     "sad",
