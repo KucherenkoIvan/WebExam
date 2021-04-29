@@ -50,7 +50,7 @@ void main() {
   float zoom = 17.;
   float shift = 0.38;
   float n2 = .47;
-  float gshift = .2;
+  float gshift = .16;
   float gscale = 5.6;
 
   vec2 offset = zoom * vec2(st.x, st.y - u_time * speed);

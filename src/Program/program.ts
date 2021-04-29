@@ -7,6 +7,7 @@ import path from 'path';
 
 class Program {
     static logger: Logger;
+
     public static main(): void {
     const app: any = express();
     this.logger = new ConsoleLogger();

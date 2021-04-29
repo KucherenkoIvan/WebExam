@@ -22,8 +22,8 @@ export default function Main(props) {
 
   return (
     <div>
-      <CanvasGL fragmentShader={simple} w="900" h="500" fps="100"/>
-      <CanvasGL fragmentShader={flame} w="900" h="500" fps="100"/>
+      <CanvasGL fragmentShader={simple} fps="100"/>
+      <CanvasGL fragmentShader={flame} fps="100"/>
     </div>
   );
 }
