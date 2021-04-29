@@ -2,11 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 export default function NowOnline({ theme }) {
-  const nowOnline = useSelector(state => state.nowOnline.count);
-  
+  var _uox = _uox || { };
+  (function() {
+    var s=document.createElement("script");
+    s.src="https://static.usuarios-online.com/uo2.min.js";
+    document.getElementsByTagName("head")[0].appendChild(s);
+  })();
+
   return (
-    <div id="qooi-counter">
-      Сейчас онлайн: {nowOnline}
-    </div>
-  );
+  <span id="uox_counter"></span>
+);
 }
