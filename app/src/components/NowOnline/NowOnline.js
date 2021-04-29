@@ -11,6 +11,6 @@ export default function NowOnline({ theme }) {
   const count = useSelector(state => state.nowOnline?.count);
 
   return (
-    <span>Сейчас в сети: {count}</span>
+    <span>Сейчас в сети: {count + 1}</span>
   );
 }
