@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
-import { NOWONLINE_UPDATE, SET_ROUTE } from './actions';
+import { CLOSE_WS, CONNECT_WS, SET_NOWONLINE, SET_ROUTE } from './actions';
 
-const nowOnline = (state = { count: 'загрузка...' }, action) => {
+
+const nowOnline = (state = 'загрузка...', action) => {
   switch(action.type) {
-    case NOWONLINE_UPDATE: return { ...state, count: action.payload };
+    case SET_NOWONLINE: return action.payload;
     default: return state;
   }
 }
+
 const route = (state = { page: '/' }, action) => {
   switch(action.type) {
     case SET_ROUTE: return { ...state, page: action.payload };
@@ -14,4 +16,19 @@ const route = (state = { page: '/' }, action) => {
   }
 }
 
-export const rootReducer = combineReducers({ nowOnline, route });
+const socket = (state = null, action ) => {
+  switch(action.type) {
+    case CONNECT_WS: {
+      if (state) {
+        return state;
+      } else return action.payload;
+    }
+    case CLOSE_WS: {
+      state?.close();
+      return null; 
+    }
+    default: return state;
+  }
+}
+
+export const rootReducer = combineReducers({ route, socket, nowOnline });

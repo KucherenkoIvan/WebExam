@@ -1,3 +1,5 @@
 // nowOnline
-export const NOWONLINE_UPDATE = 'NOW_ONLINE/UPDATE';
-export const SET_ROUTE = 'SET_ROUTE';
+export const SET_ROUTE = 'SET/ROUTE';
+export const CONNECT_WS = 'WS/CONN';
+export const CLOSE_WS = 'WS/CLOSE';
+export const SET_NOWONLINE = 'NOWONLINE/SET';

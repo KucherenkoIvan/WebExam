@@ -1,15 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setWsConnection } from '../../redux/actionCreators';
 
 export default function NowOnline({ theme }) {
-  var _uox = _uox || { };
-  (function() {
-    var s=document.createElement("script");
-    s.src="https://static.usuarios-online.com/uo2.min.js";
-    document.getElementsByTagName("head")[0].appendChild(s);
-  })();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setWsConnection())
+  }, []);
+
+  const count = useSelector(state => state.nowOnline?.count);
 
   return (
-  <span id="uox_counter"></span>
-);
+    <span>Сейчас в сети: {count}</span>
+  );
 }
