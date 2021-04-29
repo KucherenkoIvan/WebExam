@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route,
@@ -7,15 +8,8 @@ import {
 import routes from '../pages';
 
 export default function Routing() {
+  const route = useSelector(state => state.route.page);
   return (
-    <Router>
-      <Switch>
-        {
-          // Развертывание пар route:component из ../pages/index.js
-          // в /route -> component
-          Object.keys(routes).map(path => (<Route path={path} component={routes[path]} exact/>))
-        }
-      </Switch>
-    </Router>
+    React.createElement(routes[route])
   )
 }
